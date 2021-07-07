@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>About | ShinyProxy Flask Demo</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+	<h1>About page!</h1>
+	<a href="{{ url_for('home') }}">Home</a>
+	<br>
+	<br>
+	<img width="400px" src="{{ url_for('static', filename='logo.png') }}">
+	<br>
+	<br>
+	<div id="message"></div>
+
+	<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
