@@ -17,6 +17,21 @@ In order to run Flask apps using ShinyProxy you have to consider two things:
     <img width="400px" src="{{ url_for('static', filename='logo.png') }}">
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     ```
+## Building the Docker image
+
+To pull the image made in this repository from Docker Hub, use
+
+```bash
+sudo docker pull openanalytics/shinyproxy-flask-demo
+```
+
+The relevant Docker Hub repository can be found at [https://hub.docker.com/r/openanalytics/shinyproxy-flask-demo](https://hub.docker.com/r/openanalytics/shinyproxy-flask-demo])
+
+To build the image from the Dockerfile, navigate into the root directory of this repository and run
+
+```bash
+sudo docker build -t openanalytics/shinyproxy-flask-demo .
+```
 
 ## ShinyProxy Configuration
 
