@@ -17,6 +17,7 @@ In order to run Flask apps using ShinyProxy you have to consider two things:
     <img width="400px" src="{{ url_for('static', filename='logo.png') }}">
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     ```
+  
 ## Building the Docker image
 
 To pull the image made in this repository from Docker Hub, use
@@ -58,5 +59,6 @@ we have to strip it from the variable.
 - <https://dlukes.github.io/flask-wsgi-url-prefix.html>
 - <https://flask.palletsprojects.com/en/2.0.x/quickstart/#url-building>
 - <https://gunicorn.org/>
+- [Running FastAPI app in ShinyProxy](https://github.com/openanalytics/shinyproxy-flask-demo)
 
-**(c) Copyright Open Analytics NV, 2021.**
+**(c) Copyright Open Analytics NV, 2021-2024.**

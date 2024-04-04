@@ -1,18 +1,13 @@
-FROM ubuntu:20.04
+FROM python:3.12-slim
 
-ENV TZ=Europe
-ENV PYTHONUNBUFFERED "1"
-ENV DEBIAN_FRONTEND=noninteractive
+WORKDIR /app
 
-RUN apt-get update && \
-    apt-get install -y python3-pip && \
-    pip3 install flask gunicorn && \
-    rm -rf /var/lib/apt/lists/*
+COPY requirements.txt .
 
-COPY app /opt/app
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app/ /app
 
 EXPOSE 8080
-
-WORKDIR /opt/app
 
 CMD ["gunicorn", "main:app", "--bind", "0.0.0.0:8080"]
