@@ -42,13 +42,14 @@ Create a ShinyProxy configuration file (see [application.yml](application.yml)
 for a complete file), containing:
 
 ```yaml
-specs:
-  - id: flask-demo
-    container-image: openanalytics/shinyproxy-flask-demo
-    port: 8080
-    container-env:
-      SCRIPT_NAME: "#{proxy.getRuntimeValue('SHINYPROXY_PUBLIC_PATH').replaceFirst('/$','')}"
-    target-path: "#{proxy.getRuntimeValue('SHINYPROXY_PUBLIC_PATH')}"
+proxy:
+  specs:
+    - id: flask-demo
+      container-image: openanalytics/shinyproxy-flask-demo
+      port: 8080
+      container-env:
+        SCRIPT_NAME: "#{proxy.getRuntimeValue('SHINYPROXY_PUBLIC_PATH').replaceFirst('/$','')}"
+      target-path: "#{proxy.getRuntimeValue('SHINYPROXY_PUBLIC_PATH')}"
 ```
 
 Note that the `SCRIPT_NAME` environment variable may not end with `/`, therefore
